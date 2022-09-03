@@ -11,7 +11,7 @@
 		this.model      = new app.Model( this.storage );				// talks to storage
 		this.template   = new app.Template();							// holds skeleton that needs data
 		this.view       = new app.View( this.template );                // manipulates the DOM
-		this.controller = new app.Controller( this.model, this.view );  // 
+		this.controller = new app.Controller( this.model, this.view );  // the only way the model and view can communicate.
 	}
 
 	let todo = new Todo('todos-vanillajs');

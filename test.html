@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR Test</title>
+    <script src="./js/XhrRunner.js"></script>
+</head>
+<body>
+    <script>
+        callback = function( json_data ) { console.table( json_data ); }
+        let api_path = "https://americansjewelry.com/test2/local-php-api/index.php/object/select";
+        let runner = new XhrRunner( api_path );
+        runner.run( callback );
+
+    </script>
+</body>
+</html>

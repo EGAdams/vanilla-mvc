@@ -6,7 +6,7 @@
 	 *
 	 * @param {string} name The name of your new to do list.
 	 */
-	function Todo(name) {
+	function Todo( name ) {
 		this.storage    = new app.Store( name );                        // connects directly to data source.
 		this.model      = new app.Model( this.storage );				// talks to storage
 		this.template   = new app.Template();							// holds skeleton that needs data

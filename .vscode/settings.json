@@ -1,7 +1,11 @@
 {
     "cSpell.words": [
+        "Burgmer",
         "initialises",
+        "iscanceled",
+        "templating",
         "todos",
         "vanillajs"
-    ]
+    ],
+    "liveServer.settings.port": 5502
 }

@@ -16,8 +16,20 @@
      */
     Model.prototype.getObjects = function ( callback ) { this.sourceData.getObjects( callback ); }
 
+    /**
+     * Will insert an object into the database. 
+     *
+     * @param {object} data_config The call type, object id and object data
+     * @param {function} callback The callback to fire after inserting new data
+     */
     Model.prototype.insertObject = function( data_config, callback ) { this.sourceData.insertObject( data_config, callback ); }
 
+     /**
+     * Will update an existing object in the database. 
+     *
+     * @param {object} data_config The call type, object id and object data
+     * @param {function} callback The callback to fire after the update
+     */
     Model.prototype.updateObject = function( data_config, callback ) { this.sourceData.updateObject( data_config, callback ); }
 
     /**

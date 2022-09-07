@@ -16,6 +16,10 @@
      */
     Model.prototype.getObjects = function ( callback ) { this.sourceData.getObjects( callback ); }
 
+    Model.prototype.insertObject = function( data_config, callback ) { this.sourceData.insertObject( data_config, callback ); }
+
+    Model.prototype.updateObject = function( data_config, callback ) { this.sourceData.updateObject( data_config, callback ); }
+
     /**
      * Creates a new todo model
      *

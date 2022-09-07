@@ -24,8 +24,37 @@
         getObjects( callback ) {
             let api_path = this.url + "object/select";
             let runner = new this.RunnerObject( api_path );
-            runner.run( callback );
+            let run_config = { type: "GET" }
+            runner.run( run_config, callback );
         }
+
+        /**
+         * Will insert an object into the database. 
+         *
+         * @param {object} data_config The call type, object id and object data
+         * @param {function} callback The callback to fire after inserting new data
+         */
+        insertObject( data_config, callback ) {
+            let api_path = this.url + "object/insert";
+            let runner = new this.RunnerObject( api_path );
+            let run_config = { type: "POST",
+                               object_view_id: data_config.object_view_id,
+                               object_data:    data_config.object_data };
+            runner( run_config, callback ); }
+
+        /**
+         * Will update an existing object in the database. 
+         *
+         * @param {object} data_config The call type, object id and object data
+         * @param {function} callback The callback to fire after the update
+         */
+        updateObject( data_config, callback ) {
+            let api_path = this.url + "object/update";
+            let runner = new this.RunnerObject( api_path );
+            let run_config = { type: "POST",
+                               object_view_id: data_config.object_view_id,
+                               object_data:    data_config.object_data };
+            runner( run_config, callback ); }
 
         /**
              * Finds items based on a query given as a JS object

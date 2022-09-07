@@ -11,18 +11,9 @@
      * real life you probably would be making AJAX calls
      */
     class SourceData {
-        constructor( name, callback ) {
-            callback = callback || function () { };
-
-            this._dbName = name;
-
-            if ( !localStorage.getItem( name ) ) {
-                let todos = [];
-
-                localStorage.setItem( name, JSON.stringify( todos ) );
-            }
-
-            callback.call( this, JSON.parse( localStorage.getItem( name ) ) );
+        constructor( configuration_object ) {
+            this.RunnerObject = configuration_object.runner;
+            this.url          = configuration_object.url;
         }
 
         /**
@@ -31,7 +22,9 @@
          * @param {function} callback The callback to fire upon retrieving data
          */
         getObjects( callback ) {
-            
+            let api_path = this.url + "object/select";
+            let runner = new this.RunnerObject( api_path );
+            runner.run( callback );
         }
 
         /**

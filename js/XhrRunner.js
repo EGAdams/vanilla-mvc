@@ -20,8 +20,8 @@ class XhrRunner {
                         callback( result_data );
                     }
                 } else {
-                    // console.log( "xhr.readyState: " + xhr.readyState );
-                    // console.log( "xhr.status: " + xhr.status );
+                    console.log( "xhr.readyState: " + xhr.readyState );
+                    console.log( "xhr.status: " + xhr.status );
                 }
             };
             xhr.send( this.api_path );
